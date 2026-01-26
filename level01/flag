@@ -1,0 +1,16 @@
+Notes:
+Who am I?
+Check /et/passwd
+Password placeholder for flag01 looks interesting (42hDRfypTqqnw)
+Seems hashed, what algorithm could it be?
+Unkown user John in VM, probably a hint
+Okay John The Ripper tool, got it
+Quick debian docker
+put placeholder is a .hash file and ran `john --show pw.hash`
+
+
+flag:
+abcdefg
+
+token:
+f2av5il02puano7naaf6adaaf
