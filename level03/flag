@@ -1,0 +1,41 @@
+Notes:
+    Exploit binary file how?
+    how to access content?
+    `cat` shows binary, as expected
+    Maybe `gdb`? If it's in C*
+    _
+    also `nm -u` to see functions called in program
+    output:
+    `    w _Jv_RegisterClasses
+         w __gmon_start__
+         U __libc_start_main@@GLIBC_2.0
+         U getegid@@GLIBC_2.0
+         U geteuid@@GLIBC_2.0
+         U setresgid@@GLIBC_2.0
+         U setresuid@@GLIBC_2.0
+         U system@@GLIBC_2.0
+    `
+    *It's C yihaa
+    _
+    `nm` shows:
+    `
+    [...]
+    08048480 t frame_dummy
+        U getegid@@GLIBC_2.0
+        U geteuid@@GLIBC_2.0
+    080484a4 T main
+        U setresgid@@GLIBC_2.0
+        U setresuid@@GLIBC_2.0
+        U system@@GLIBC_2.0
+    `
+    I guess we're looking at `setresgid` and `setresuid` more specifically
+    _
+    Inside `gdb ./level03`
+    `run` gives : `Exploit me`
+    `list` won't work since program isn't called 'level03.c'
+    _
+    `layour src` or `CTRL + X then A` to open TUI mode or start with `gdb -tui`
+    _
+    `disas main` shows us assembler dump of main
+    `layout next` to inspect in top part of gdb window
+    

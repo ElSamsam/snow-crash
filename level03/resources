@@ -1,0 +1,11 @@
+Binary exploits:
+    https://www.secquest.co.uk/white-papers/binary-exploitation-techniques
+
+    https://ctf101.org/binary-exploitation/overview/
+
+GDB how to:
+    https://www.geeksforgeeks.org/c/gdb-step-by-step-introduction/
+
+    https://www.man7.org/linux/man-pages/man2/setresuid.2.html
+
+    https://stackoverflow.com/questions/19264899/how-to-display-the-code-window-when-debugging-by-gdb
