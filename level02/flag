@@ -1,0 +1,29 @@
+Notes:
+.pcap file ?
+packet capture (as in network packets) ; registery of trafic on a network between time A and time B
+view with `tcpdump -r <file.cpap>`
+
+transfer file to host machine with:
+    `scp -P 4242 level02@10.11.200.236:/home/user/level02/level02.pcap ./level02/`
+
+Open with wireshark
+Look through packets data
+
+SodaCan?
+DISPLAY
+
+Login attempt
+Password
+Then response: Incorrect login 
+But good password ?
+How to get keyinputs from network activity
+Follow TCP 'conversation' with: `CTRL + SHIFT + ALT + T`
+view as Hex
+Password appears with extraneous '.' characters, hex dump shows they are `7F` aka `Backspace` which gives us full password
+    ft_wandr...NDRel.L0L >>> ft_waNDReL0L
+
+flag:
+    ft_waNDReL0L
+
+token:
+    kooda2puivaav1idi4f57q8iq
