@@ -1,0 +1,16 @@
+Notes:
+    php ?
+    preg_replace()
+    _
+    nm -u level06 shows execve and mandem libc functions
+    _
+    trying to insert `getflag` somewhere in level06.php args
+    
+    program looks for an `x` variable
+    After looking at php syntax online we came up with this: 
+    `[x {${system(getflag)}}]`
+    And it works!?
+    Using `system()` here since `execve()` did not work, it is php not c
+    
+token:
+    `wiok45aaoguiboiki2tuin6ub`
