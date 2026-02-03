@@ -1,0 +1,7 @@
+strstr vuln:
+    https://vuldb.com/?id.265570
+    `The product copies an input buffer to an output buffer without verifying that the size of the input buffer is less than the size of the output buffer`
+
+symlink shenaningans:
+    https://askubuntu.com/questions/600714/creating-a-symlink-from-one-folder-to-another-with-different-names
+    https://www.linode.com/docs/guides/linux-symlinks/

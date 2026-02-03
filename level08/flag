@@ -1,0 +1,26 @@
+Notes:
+    we have binary and 'token' file
+    nm -u >>    strstr
+                open
+                exit
+                read
+                write
+                err
+
+    strstr vulnerability?
+    maybe one if input size is bigger than output size ?
+
+    other lead:
+    symlinks
+    `ln -s token /tmp/test`
+    not an actual symlink, /tmp/tst not recognised as file by ./level08
+    solution: put FULL path when creating link
+    `ln -s /home/user/level08/token /tmp/test`
+    In this case, `./level08 /tmp/test` prints out flag!!
+    And `realpath /tmp/test` shows `/home/user/level08`
+
+flag:
+    `quif5eloekouj29ke0vouxean`
+
+token:
+    `25749xKZ8L7DkSCwJkT9dyv6f`
