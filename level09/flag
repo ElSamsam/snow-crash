@@ -1,0 +1,20 @@
+Notes:
+    `token` file contains exntended ascci characters:
+        `f4kmm6p|=<82>^?p<82>n<83><82>DB<83>Du{^?<8C><89>`
+    thought it was BASE91 or something but that does not seem to get us closer to the answer
+    tried to decypher or translate it to printable characters but nothing seems to do the trick.
+    _
+    okay so
+    earlier we noticed that if you give `0` as argument for ./level09 it gives`0`
+    if input `01` ouput is `02` and so on
+    same with `1` which gives `1` and `11` gives `12`
+    So:
+    convert token to hexa, substract to each character its index value
+    which gives:
+        `66 34 6b 6d 6d 36 70 7c 3d 82 7f 70 82 6e 83 82 44 42 83 44 75 7b 7f 8c 89 0a`
+    _
+    flag:
+        `f3iji1ju5yuevaus41q1afiuq`
+    _
+    token:
+        `s5cAJpM8ev6XHw998pRWG728z`
