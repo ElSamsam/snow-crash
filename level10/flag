@@ -1,0 +1,14 @@
+Notes:
+
+    1.
+    Need to create `tmp/file`
+    Have a do while loop that makes symlink `/tmp/link/` from /tmp/file`
+        And then overwrites symlink `/tmp/link` from `/home/user/level10/token`
+    
+    2.
+    Open 2nd terminal that will run do while loop to spam `./level10 /tmp/link 127.0.0.1` in background
+    (possibility to run multiple loops in parralel for better chances of breaching)
+    
+    3.
+    Open 3rd terminal that listens on `nc -lk 6969`
+    
