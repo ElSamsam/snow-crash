@@ -1,5 +1,6 @@
 Notes:
     `token` file contains exntended ascci characters:
+    To view in this format use `vi` or `vim` as terminal cannot print multibyte characters. They come out as: `�`
         `f4kmm6p|=<82>^?p<82>n<83><82>DB<83>Du{^?<8C><89>`
     thought it was BASE91 or something but that does not seem to get us closer to the answer
     tried to decypher or translate it to printable characters but nothing seems to do the trick.
@@ -12,6 +13,24 @@ Notes:
     convert token to hexa, substract to each character its index value
     which gives:
         `66 34 6b 6d 6d 36 70 7c 3d 82 7f 70 82 6e 83 82 44 42 83 44 75 7b 7f 8c 89 0a`
+
+    Little bash script that does it all for us (ngl, we did it by hand the first time)
+```
+    #!/bin/bash
+
+    line=$(cat ~/token)
+    
+    for ((i=0; i<${#line}; i++)); do
+        char="${line:$i:1}";
+        ascii=$(LC_ALL=C printf "%d" "'$char");
+        (( ascii -= i ));
+        new_char=$(LC_ALL=C awk "BEGIN{printf \"%c\", $ascii}");
+        echo -n "$new_char";
+        done;
+    echo;
+```
+
+    LC_ALL=C tells bash and awk to treat all bytes as raw single bytes, not UTF-8.
     _
     flag:
         `f3iji1ju5yuevaus41q1afiuq`
